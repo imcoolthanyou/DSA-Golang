@@ -85,4 +85,20 @@ func (l *LinkedHead) Show() {
     }
     fmt.Println("NULL")
 }
+func (l *LinkedHead) Reverse(){
+	if l.head.next==nil || l.head==nil{
+		return
+	}
+
+	var prev, curr, next *LinkedNode 
+	curr = l.head 
+	for curr != nil { 
+		next = curr.next 
+		curr.next = prev 
+		prev = curr 
+		curr = next 
+		} 
+		l.head = prev
+        l.Show() 
+}
 	
